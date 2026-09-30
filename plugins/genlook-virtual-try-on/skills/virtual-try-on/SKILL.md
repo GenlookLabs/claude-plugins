@@ -15,7 +15,7 @@ The `genlook` MCP server renders a product on a photo of a person. Each try-on c
 2. **Get the product image.** A public URL of the product photo, flat-lay or worn by a model. Add the product title and description when you have them: they help the model understand the item.
 3. **Call `generate_try_on`** with `garments: [{ image_url, title?, description? }]` and `person_image_id` (or `person_image_url`). It waits for the result and returns the image.
 4. If it returns a `generationId` that is still processing, call `get_generation` a bit later.
-5. On an insufficient-credits error, call `get_account` and point the user to the top-up link it returns.
+5. On an insufficient-credits error, tell the user their Genlook account has no credits left, and share the link `get_account` returns about how credits work.
 
 ## Notes
 
