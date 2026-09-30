@@ -9,8 +9,8 @@
   },
   "plugins": [
     {
-      "name": "virtual-try-on",
-      "source": "./plugins/virtual-try-on",
+      "name": "genlook-virtual-try-on",
+      "source": "./plugins/genlook-virtual-try-on",
       "description": "See any clothing, eyewear or accessory on a photo of a person, in about 10 seconds."
     }
   ]

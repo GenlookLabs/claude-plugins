@@ -1,6 +1,6 @@
 {
-  "name": "virtual-try-on",
-  "version": "1.0.0",
+  "name": "genlook-virtual-try-on",
+  "version": "1.0.1",
   "description": "See any clothing, eyewear or accessory on a photo of a person, in about 10 seconds. Powered by the Genlook Try-On API.",
   "author": {
     "name": "Genlook",
@@ -10,5 +10,10 @@
   "homepage": "https://genlook.app/docs/tryon-api/mcp",
   "repository": "https://github.com/GenlookLabs/claude-plugins",
   "license": "MIT",
-  "keywords": ["virtual-try-on", "fashion", "e-commerce", "image-generation"]
+  "keywords": [
+    "virtual-try-on",
+    "fashion",
+    "e-commerce",
+    "image-generation"
+  ]
 }

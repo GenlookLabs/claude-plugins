@@ -1,6 +1,6 @@
 # Genlook plugins for Claude Code
 
-## virtual-try-on
+## genlook-virtual-try-on
 
 See any clothing, eyewear or accessory on a photo of a person, in about 10 seconds, straight from Claude Code. Connects the [Genlook MCP server](https://genlook.app/docs/tryon-api/mcp?utm_source=github&utm_medium=readme&utm_campaign=claude_plugin) and adds a skill that walks Claude through a try-on.
 
@@ -9,7 +9,7 @@ claude plugin marketplace add GenlookLabs/claude-plugins
 ```
 
 ```bash
-claude plugin install virtual-try-on@genlook
+claude plugin install genlook-virtual-try-on@genlook
 ```
 
 Then run `/mcp` and sign in with your Genlook account. New accounts get 10 free credits; 1 credit per try-on.
