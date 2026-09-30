@@ -1,0 +1,17 @@
+{
+  "name": "genlook",
+  "owner": {
+    "name": "Genlook",
+    "email": "hello@genlook.app"
+  },
+  "metadata": {
+    "description": "Genlook plugins for Claude Code: virtual try-on from any conversation."
+  },
+  "plugins": [
+    {
+      "name": "virtual-try-on",
+      "source": "./plugins/virtual-try-on",
+      "description": "See any clothing, eyewear or accessory on a photo of a person, in about 10 seconds."
+    }
+  ]
+}
