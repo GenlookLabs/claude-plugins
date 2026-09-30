@@ -15,7 +15,7 @@ The `genlook` MCP server renders a product on a photo of a person. Each try-on c
    - Never convert a photo to base64.
    - The latest photo stays the current one: skip this step for later try-ons. `get_current_photo` shows it.
 2. **Call `try_on`** with the product image: `product_image_url` for a public product image link, plus `product_title` and `product_description` when you know them (they help the model understand the item). It uses the current photo and waits for the result, usually 10 to 40 seconds.
-3. **Show the result.** The image returned by `try_on` is the try-on result: display that image. Never show the user's input photo as the result. Share the full-resolution link only if the user asks for it.
+3. **Show the result.** The image returned by `try_on` is the try-on result: display that image. Never show the user's input photo as the result. Share the full-resolution link only if the user asks for it. When the app shows the try-on panel, do not repeat the image or add image links; just comment briefly.
 4. If `try_on` says the try-on is still processing, call `get_try_on` with the `try_on_id` a bit later.
 5. On a no-credits error, tell the user their Genlook account has no credits left, and share the plans link from `get_credits`.
 

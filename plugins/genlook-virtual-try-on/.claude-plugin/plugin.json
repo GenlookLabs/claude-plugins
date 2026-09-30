@@ -1,6 +1,6 @@
 {
   "name": "genlook-virtual-try-on",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "See any clothing, eyewear or accessory on a photo of a person, in about 10 seconds. Powered by the Genlook Try-On API.",
   "author": {
     "name": "Genlook",
