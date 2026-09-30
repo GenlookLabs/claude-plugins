@@ -9,15 +9,15 @@ The `genlook` MCP server renders a product on a photo of a person. Each try-on c
 
 ## Steps
 
-1. **Get the person photo.**
-   - If the user already uploaded one recently, call `get_uploaded_photo` and reuse its `imageId`.
-   - Otherwise call `upload_photo` with a public `image_url`, or pass `person_image_url` to `generate_try_on`. One person, facing the camera, waist-up or full body works best.
-   - A photo attached in the chat cannot be passed to the tools. Ask the user for a public link to the photo instead of trying to convert it to base64.
-2. **Get the product image.** A public URL of the product photo, flat-lay or worn by a model. Add the product title and description when you have them: they help the model understand the item.
-3. **Call `generate_try_on`** with `garments: [{ image_url?, title?, description? }]` and the person (see step 1). It waits for the result, usually 10 to 40 seconds.
-4. **Show the result.** The image returned by `generate_try_on` is the try-on result: display that image. Never show the user's input photo as the result. Share the download link only if the user asks for it.
-5. If it returns a `generationId` that is still processing, call `get_generation` a bit later.
-6. On an insufficient-credits error, tell the user their Genlook account has no credits left, and share the plans link `get_account` returns.
+1. **Add the person photo.** One person, facing the camera, waist-up or full body works best.
+   - The user gave a public link to the photo: call `add_photo_from_url`.
+   - The photo is attached in the chat or is a file on disk: call `get_photo_upload_link`. In Claude Code with a shell, upload the file with the `curl` command it returns. Otherwise give the link to the user and wait until they say they are done.
+   - Never convert a photo to base64.
+   - The latest photo stays the current one: skip this step for later try-ons. `get_current_photo` shows it.
+2. **Call `try_on`** with the product image: `product_image_url` for a public product image link, plus `product_title` and `product_description` when you know them (they help the model understand the item). It uses the current photo and waits for the result, usually 10 to 40 seconds.
+3. **Show the result.** The image returned by `try_on` is the try-on result: display that image. Never show the user's input photo as the result. Share the full-resolution link only if the user asks for it.
+4. If `try_on` says the try-on is still processing, call `get_try_on` with the `try_on_id` a bit later.
+5. On a no-credits error, tell the user their Genlook account has no credits left, and share the plans link from `get_credits`.
 
 ## Notes
 
